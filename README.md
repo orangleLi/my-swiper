@@ -49,9 +49,7 @@
 
 ### 页面布局
 
-
 ![](https://user-gold-cdn.xitu.io/2019/9/10/16d1957cd79951e3?w=1919&h=393&f=png&s=385915)
-
 
 * class="swiper-list" 这个div为视口div,大小和图片的大小相同，其余部分隐藏
 * class="swiper-main" 这个div为图片列表div，通过不断变化left值来切换上一张图片和下一张图片
