@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>卡片式轮播</title>
+	<style>
+		.swiper-list{
+			height: 200px;
+			position: relative;
+			overflow: hidden;
+    		border: 1px solid #eee;
+    		padding: 30px 0;
+		}
+		.swiper-main{
+			height: 100%;
+			position: relative;
+		}
+		.swiper-main img{
+			height: 100%;
+			display: block;
+			position: absolute;
+			top: 0px;
+			border-radius: 4px;
+			display: inline-block;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+		.btn{
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 30px;
+    		height: 30px;
+    		z-index: 1002;
+		}
+		.leftBtn{
+			left: 0px;
+		}
+		.rightBtn{
+			right: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="swiper-list-card swiper-list">	
+		<div class="swiper-main-card swiper-main"></div>
+		<img id="prev-card" class="btn leftBtn" src="../left.png" alt="">
+		<img id="next-card" class="btn rightBtn" src="../right.png" alt="">
+	</div>
+	<div class="swiper-list-stack swiper-list">	
+		<div class="swiper-main-stack swiper-main"></div>
+		<img id="prev-stack" class="btn leftBtn" src="../left.png" alt="">
+		<img id="next-stack" class="btn rightBtn" src="../right.png" alt="">
+	</div>
+</body>
+<script src="./slider_card.js"></script>
+<script>
+
+	let imgArr = [{
+			url: '#',
+			imgPath: '../i.jpg'
+		},
+		{
+			url: '#',
+			imgPath: '../o.jpg'
+		},
+		{
+			url: '#',
+			imgPath: '../q.jpeg'
+		},
+		{
+			url: '#',
+			imgPath: '../w.jpg'
+		},
+		{
+			url: '#',
+			imgPath: '../z.png'
+		}
+	];
+	// let imgArr = ['i.jpg', 'o.jpg', 'q.jpeg'];
+	// let imgArr = ['i.jpg', 'o.jpg'];
+	// let imgArr = ['i.jpg'];
+	new Swiper({
+		imgArr: imgArr, 
+		imgWidth: 320, 
+		aniTime: 1000, 
+		intervalTime: 1500, 
+		scale: 0.8, 
+		autoplay: false,
+		gap: 0,
+      	clsSuffix: '-card'
+	}).init();
+
+
+	new Swiper({
+		imgArr: imgArr, 
+		imgWidth: 320, 
+		aniTime: 1000, 
+		intervalTime: 1500, 
+		scale: 0.8, 
+		autoplay: false,
+		gap: -200,
+      	clsSuffix: '-stack'
+	}).init();
+</script>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+		ul{padding: 0; list-style: none;}
+		.swiper-list{
+			width: 640px;
+			height: 360px;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+		}
+		.swiper-main {
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+		.swiper-item{
+			height: 100%;
+			display: inline;
+			position: absolute;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+
+		.swiper-spot{
+			width: 100%;
+			height: 15px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			bottom: 10px;
+		}
+		.swiper-spot .spot-item{
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background-color: #ccc;
+			margin-left: 10px;
+		}
+		.swiper-spot .spot-item:nth-of-type(1) {
+			margin-left: 0;
+		}
+
+		.leftBtn{
+			position: absolute;
+			left: 15px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 30px;
+    		height: 30px;
+		}
+		.rightBtn{
+			position: absolute;
+			right: 15px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 30px;
+    		height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="swiper-list"></div>
+</body>
+<script src="./slider.js"></script>
+<script>
+	console.time();
+	let imgArr = [
+		{
+			url: '#',
+			imgPath: '../i.jpg'
+		},
+		{
+			url: '#',
+			imgPath: '../o.jpg'
+		},
+		{
+			url: '#',
+			imgPath: '../q.jpeg'
+		},
+		{
+			url: '#',
+			imgPath: '../w.jpg'
+		},
+		{
+			url: '#',
+			imgPath: '../z.png'
+		}
+	];
+	// let imgArr = ['i.jpg', 'o.jpg', 'q.jpeg'];
+	// let imgArr = ['i.jpg', 'o.jpg'];
+	// let imgArr = ['i.jpg'];
+	new Swiper({
+		imgArr: imgArr,
+		aniTIme: 1000,
+		intervalTime: 1000,
+		autoplay: true
+	}).init();
+	console.timeEnd();
+
+</script>
+</html>
