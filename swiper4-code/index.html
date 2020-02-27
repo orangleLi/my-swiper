@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Swiper</title>
+	<link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+	<style>
+		.swiper-container{
+			width: 850px;
+			height: 260px;
+		}
+		.swiper-slide img{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<script type="text/javascript" src="./js/swiper.min.js"></script>
+<body>
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide">
+				<img src="./images/flower.jpg">
+	        </div>
+	        <div class="swiper-slide">
+				<img src="./images/flowers.jpg">
+	        </div>
+	        <div class="swiper-slide">
+				<img src="./images/night.jpg">
+	        </div>
+	    </div>
+	</div>
+</body>
+<script type="text/javascript">
+// cover flow是类似于苹果将多首歌曲的封面以3D界面的形式显示出来的方式。coverflow效果参数，可选值：
+
+// rotate：slide做3d旋转时Y轴的旋转角度。默认50。
+// stretch：每个slide之间的拉伸值，越大slide靠得越紧。 默认0。
+// depth：slide的位置深度。值越大z轴距离越远，看起来越小。 默认100。
+// modifier：depth和rotate和stretch的倍率，相当于depth*modifier、rotate*modifier、stretch*modifier，值越大这三个参数的效果越明显。默认1。
+// slideShadows：开启slide阴影。默认 true。
+var mySwiper = new Swiper ('.swiper-container', {
+	    loop: true, // 循环模式选项
+	    // slide的切换效果，默认为"slide"（位移切换），可设置为'slide'（普通切换、默认）,"fade"（淡入）"cube"（方块）"coverflow"（3d流）"flip"（3d翻转）。
+	    effect: 'coverflow',
+	    slidesPerView: 2,// 设置slider容器能够同时显示的slides数量(carousel模式)
+	    centeredSlides: true, // 设定为true时，active slide会居中，而不是默认状态下的居左。
+	    coverflowEffect: {
+            rotate: 0,
+            stretch: 70, // 指的时后面一张图片被前一张图片遮挡的部分
+            depth: 160, // 图片缩小的部分
+            modifier: 2
+        }
+	  })
+</script>
+</html>
